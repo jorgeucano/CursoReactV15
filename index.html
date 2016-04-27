@@ -2,22 +2,9 @@
 <html>
 	<head>
 		<title>Curso React</title>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 	</head>
 	<body>
-		<div id="containter"></div>
-		<script type="text/babel">
-			const Hello = class Button extends React.Component{
-				render(){
-					return <div>Hello {this.props.name}!</div>;
-				}
-			}
-			ReactDOM.render(
-				<Hello name='React' />,
-					document.getElementById('containter')
-			);
-		</script>
+		<div id="container"></div>
+		<script src="./build/cursoReactV15.js"></script>
 	</body>
 </html>
