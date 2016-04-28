@@ -14,8 +14,7 @@ class Task extends React.Component{
 
   render(){
     return (
-      <li>
-        <input type='checkbox' checked={this.props.done ? 'checked' : null } />
+      <li className={this.props.done ? 'done' : null }>
         {this.props.name}
       </li>
     )

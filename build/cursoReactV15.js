@@ -19056,8 +19056,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'li',
-	        null,
-	        _react2.default.createElement('input', { type: 'checkbox', checked: this.props.done ? 'checked' : null }),
+	        { className: this.props.done ? 'done' : null },
 	        this.props.name
 	      );
 	    }
