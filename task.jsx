@@ -12,7 +12,8 @@ class Task extends React.Component{
   };
 
   state = {
-    update: false
+    update: false,
+    name: `Task name is ${this.props.name}`
   };
 
   handleClick = (event) =>{

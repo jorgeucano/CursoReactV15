@@ -19057,7 +19057,8 @@
 	    }
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Task)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
-	      update: false
+	      update: false,
+	      name: 'Task name is ' + _this.props.name
 	    }, _this.handleClick = function (event) {
 	      _this.setState({ updated: true });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
