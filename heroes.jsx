@@ -10,27 +10,48 @@ var dataSource = [
 
 class Heroes extends React.Component{
   state = {
-    list: []
+    list: [  {name: 'Jorge', power:'ninja javascript (?)'},
+      {name: 'IronMan', power:'filantropo y super armadura'},
+      {name: 'Thor', power:'el martillo '},
+      {name: 'Hulk', power:'se pone verde'}]
   };
 
-  componenteDidMount(){
-    setTimeOut(function(){
+  fetchData = () =>{
+    setTimeout(function(){
       this.setState({ list : dataSource });
     }.bind(this), 2000);
   }
 
-  render(){
+  handleReset = () =>{
+    this.setState({list: []});
+  }
 
-    return ( <ul>
-    {
-    this.state.list.map(function(heroe, index) {
-    return (
-    <li key={index}>
-                  {heroe.name} the { heroe.power }!
-                </li>
-    ); })
+  handleFetch = () => {
+    this.fetchData();
+  }
+
+  componenteDidMount(){
+    this.fetchData();
+  }
+
+  render(){
+    if (!this.state.list.length) {
+      return ( <div>
+      No list!
+      <br />
+      <button onClick={this.handleFetch}>Fetch</button>
+      </div> );
     }
-    </ul> );
+    else {
+      return (
+        <div>
+          <ul>
+          
+          </ul>
+          <button onClick={this.handleReset}>Reset</button>
+        </div>
+      );
+    }
   }
 };
 

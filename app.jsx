@@ -3,7 +3,7 @@ import reactDOM from 'react-dom';
 import Message from './message';
 import Link from './link';
 import ToDo from './todo';
-import Heroes from './heroes'
+
 
 class App extends React.Component{
   render(){
@@ -17,7 +17,7 @@ class App extends React.Component{
         </nav>
         <ToDo />
         <hr />
-        <Heroes />
+
       </div>
     );
   }

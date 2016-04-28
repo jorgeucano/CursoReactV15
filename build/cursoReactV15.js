@@ -68,10 +68,6 @@
 
 	var _todo2 = _interopRequireDefault(_todo);
 
-	var _heroes = __webpack_require__(154);
-
-	var _heroes2 = _interopRequireDefault(_heroes);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -104,8 +100,7 @@
 	          _react2.default.createElement(_link2.default, { url: 'https://twitter.com/jorgeucano', caption: 'My Twitter' })
 	        ),
 	        _react2.default.createElement(_todo2.default, null),
-	        _react2.default.createElement('hr', null),
-	        _react2.default.createElement(_heroes2.default, null)
+	        _react2.default.createElement('hr', null)
 	      );
 	    }
 	  }]);
@@ -19083,16 +19078,28 @@
 	  _createClass(Task, [{
 	    key: 'render',
 	    value: function render() {
-	      var name = 'Task name is ' + this.props.name;
 	      return _react2.default.createElement(
-	        'li',
-	        { className: this.props.done ? 'done' : null, onClick: this.handleClick },
-	        this.props.name,
-	        this.state.updated ? _react2.default.createElement(
-	          'small',
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'ul',
 	          null,
-	          'Updated...'
-	        ) : null
+	          this.state.list.map(function (heroe, index) {
+	            return _react2.default.createElement(
+	              'li',
+	              { key: index },
+	              heroe.name,
+	              ' the ',
+	              heroe.power,
+	              '!'
+	            );
+	          })
+	        ),
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: this.handleReset },
+	          'Reset'
+	        )
 	      );
 	    }
 	  }]);
@@ -19101,7 +19108,7 @@
 	}(_react2.default.Component);
 
 	Task.propTypes = {
-	  name: _react2.default.PropTypes.string.isRequired,
+	  name: _react2.default.PropTypes.string,
 	  done: _react2.default.PropTypes.bool
 	};
 	Task.defaultProps = {
@@ -19167,86 +19174,6 @@
 	;
 
 	exports.default = Tasks;
-
-/***/ },
-/* 154 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var dataSource = [{ name: 'Jorge', power: 'ninja javascript (?)' }, { name: 'IronMan', power: 'filantropo y super armadura' }, { name: 'Thor', power: 'el martillo ' }, { name: 'Hulk', power: 'se pone verde' }];
-
-	var Heroes = function (_React$Component) {
-	  _inherits(Heroes, _React$Component);
-
-	  function Heroes() {
-	    var _Object$getPrototypeO;
-
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, Heroes);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Heroes)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
-	      list: []
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-
-	  _createClass(Heroes, [{
-	    key: 'componenteDidMount',
-	    value: function componenteDidMount() {
-	      setTimeOut(function () {
-	        this.setState({ list: dataSource });
-	      }.bind(this), 2000);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-
-	      return _react2.default.createElement(
-	        'ul',
-	        null,
-	        this.state.list.map(function (heroe, index) {
-	          return _react2.default.createElement(
-	            'li',
-	            { key: index },
-	            heroe.name,
-	            ' the ',
-	            heroe.power,
-	            '!'
-	          );
-	        })
-	      );
-	    }
-	  }]);
-
-	  return Heroes;
-	}(_react2.default.Component);
-
-	;
-
-	exports.default = Heroes;
 
 /***/ }
 /******/ ]);

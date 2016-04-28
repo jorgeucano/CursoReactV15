@@ -3,7 +3,7 @@ import React from 'react';
 class Task extends React.Component{
 
   static propTypes = {
-    name: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string,
     done: React.PropTypes.bool
   };
 
@@ -21,13 +21,21 @@ class Task extends React.Component{
   }
 
   render(){
-    const name = `Task name is ${this.props.name}`;
-    return (
-      <li className={this.props.done ? 'done' : null } onClick={this.handleClick}>
-        {this.props.name}
-        {this.state.updated ? <small>Updated...</small> : null }
-      </li>
-    )
+        return (
+            <div>
+              <ul>
+                {
+                  this.state.list.map(function(heroe, index) {
+                      return (
+                          <li key={index}>{heroe.name} the {heroe.power}!</li>
+                          );
+                   })
+                 }
+                </ul>
+                <button onClick={this.handleReset}>Reset</button>
+              </div>
+          );
+    
   }
 };
 
