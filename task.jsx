@@ -3,7 +3,7 @@ import React from 'react';
 class Task extends React.Component{
 
   static propTypes = {
-    name: React.PropTypes.string,
+    name: React.PropTypes.string.isRequired,
     done: React.PropTypes.bool
   };
 
