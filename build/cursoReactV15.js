@@ -18988,7 +18988,8 @@
 	        _react2.default.createElement(_task2.default, { name: 'Introduccion', done: true }),
 	        _react2.default.createElement(_task2.default, { name: 'Entendiendo los controladores', done: true }),
 	        _react2.default.createElement(_task2.default, { name: 'HTML y Controladores', done: true }),
-	        _react2.default.createElement(_task2.default, { name: 'Propiedades', done: false })
+	        _react2.default.createElement(_task2.default, { name: 'Propiedades', done: false }),
+	        _react2.default.createElement(_task2.default, null)
 	      );
 	    }
 	  }]);
@@ -19047,6 +19048,14 @@
 	  return Task;
 	}(_react2.default.Component);
 
+	Task.propTypes = {
+	  name: _react2.default.PropTypes.string,
+	  done: _react2.default.PropTypes.bool
+	};
+	Task.defaultProps = {
+	  name: 'Unknown task',
+	  done: false
+	};
 	;
 
 	exports.default = Task;

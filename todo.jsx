@@ -9,6 +9,7 @@ class ToDo extends React.Component{
         <Task name='Entendiendo los controladores' done />
         <Task name='HTML y Controladores' done />
         <Task name='Propiedades' done={false} />
+        <Task />
       </ul>
     )
   }
