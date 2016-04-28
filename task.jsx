@@ -15,9 +15,13 @@ class Task extends React.Component{
     update: false
   };
 
+  handleClick = (event) =>{
+    this.setState({updated: true});
+  }
+
   render(){
     return (
-      <li className={this.props.done ? 'done' : null }>
+      <li className={this.props.done ? 'done' : null } onClick={this.handleClick}>
         {this.props.name}
         {this.state.updated ? <small>Updated...</small> : null }
       </li>

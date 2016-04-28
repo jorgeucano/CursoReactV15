@@ -19058,6 +19058,8 @@
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Task)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
 	      update: false
+	    }, _this.handleClick = function (event) {
+	      _this.setState({ updated: true });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
@@ -19066,7 +19068,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'li',
-	        { className: this.props.done ? 'done' : null },
+	        { className: this.props.done ? 'done' : null, onClick: this.handleClick },
 	        this.props.name,
 	        this.state.updated ? _react2.default.createElement(
 	          'small',
