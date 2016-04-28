@@ -18923,7 +18923,11 @@
 	      return _react2.default.createElement(
 	        'a',
 	        { href: this.props.url },
-	        this.props.caption
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          this.props.caption
+	        )
 	      );
 	    }
 	  }]);
