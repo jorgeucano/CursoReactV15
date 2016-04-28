@@ -19067,6 +19067,7 @@
 	  _createClass(Task, [{
 	    key: 'render',
 	    value: function render() {
+	      var name = 'Task name is ' + this.props.name;
 	      return _react2.default.createElement(
 	        'li',
 	        { className: this.props.done ? 'done' : null, onClick: this.handleClick },

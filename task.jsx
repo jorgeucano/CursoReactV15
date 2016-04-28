@@ -21,6 +21,7 @@ class Task extends React.Component{
   }
 
   render(){
+    const name = `Task name is ${this.props.name}`;
     return (
       <li className={this.props.done ? 'done' : null } onClick={this.handleClick}>
         {this.props.name}
