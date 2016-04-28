@@ -1,5 +1,5 @@
-import React from 'react';
-import Hello from './entendiendoLosControladores/hello-2';
+
+import Hello from './hello-2';
 
 class Message extends React.Component{
   render(){

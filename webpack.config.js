@@ -4,6 +4,9 @@ module.exports = {
 	resolve:{
 		extensions: ['', '.jsx', '.js']
 	},
+	externals: {
+    'react': 'React'
+},
 	entry: './app.jsx',
 	output:{
 		path: './build',
@@ -18,4 +21,4 @@ module.exports = {
 			}
 		]
 	}
-}; 
+};
