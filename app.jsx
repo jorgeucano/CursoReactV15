@@ -1,5 +1,3 @@
-import React from 'react';
-import reactDOM from 'react-dom';
-import Hello from './hello';
+import Hello from './entendiendoLosControladores/hello-1';
 
 reactDOM.render(<Hello name='React'/>, document.getElementById('container'));
