@@ -3,11 +3,11 @@ import reactDOM from 'react-dom';
 import Message from './message';
 import Link from './link';
 import ToDo from './todo';
+import Heroes from './heroes'
 
 class App extends React.Component{
   render(){
     const url = 'https://github.com/jorgeucano/CursoReactV15/';
-
     return(
       <div>
         <Message />
@@ -16,6 +16,8 @@ class App extends React.Component{
           <Link url='https://twitter.com/jorgeucano' caption="My Twitter" />
         </nav>
         <ToDo />
+        <hr />
+        <Heroes />
       </div>
     );
   }
