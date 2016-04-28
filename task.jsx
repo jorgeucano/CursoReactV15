@@ -8,14 +8,18 @@ class Task extends React.Component{
   };
 
   static defaultProps = {
-    name: 'Unknown task',
     done: false
+  };
+
+  state = {
+    update: false
   };
 
   render(){
     return (
       <li className={this.props.done ? 'done' : null }>
         {this.props.name}
+        {this.state.updated ? <small>Updated...</small> : null }
       </li>
     )
   }

@@ -19046,9 +19046,19 @@
 	  _inherits(Task, _React$Component);
 
 	  function Task() {
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
+
 	    _classCallCheck(this, Task);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Task).apply(this, arguments));
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Task)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+	      update: false
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  _createClass(Task, [{
@@ -19057,7 +19067,12 @@
 	      return _react2.default.createElement(
 	        'li',
 	        { className: this.props.done ? 'done' : null },
-	        this.props.name
+	        this.props.name,
+	        this.state.updated ? _react2.default.createElement(
+	          'small',
+	          null,
+	          'Updated...'
+	        ) : null
 	      );
 	    }
 	  }]);
@@ -19070,7 +19085,6 @@
 	  done: _react2.default.PropTypes.bool
 	};
 	Task.defaultProps = {
-	  name: 'Unknown task',
 	  done: false
 	};
 	;
